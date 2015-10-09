@@ -1,0 +1,40 @@
+<head>
+  <title>mbc</title>
+</head>
+
+<body>
+  <h1>Welcome to Model-Based Cooperation!</h1>
+
+  {{> task}}
+</body>
+
+<template name="task">
+  <button type="button" value="1" class="btn left btn-success action">Cooperate</button>
+  <button type="button" value="2" class="btn btn-danger action">Defect</button><br>
+  <img src="face2.png"/><br>
+  {{#if equals choice 1}}<br>
+	  <strong class="alert alert-success">Player A Cooperated!</strong><br><br>
+  {{/if}}
+  {{#if equals choice 2}}<br>
+	  <strong class="alert alert-danger">Player A Defected!</strong><br><br>
+  {{/if}}
+  <p>You've cooperated {{ccount}} times and defected {{dcount}} times.</p>  
+  <p>You've made {{counter}} decisions.</p>
+  <p>You've earned ${{earned}}.00 total.</p>
+
+</template>
+
+<template name="feedback">
+  {{#if equals choice 1}}
+  <div class="alert alert-success">
+  <strong>Player A Cooperated!</strong>
+  </div>
+  {{/if}}
+  {{#if equals choice 2}}
+  <div class="alert alert-danger">
+  <strong>Player A Defected!</strong>
+  </div>
+  {{/if}}
+</template>
+
+
